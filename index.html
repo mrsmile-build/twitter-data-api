@@ -1,12 +1,180 @@
 <!DOCTYPE html>
-<html>
-<head><title>TEST</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitter Data API - Tweets, Users & Trends</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .animate { animation: fadeInUp 0.6s ease-out; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .price-card { transition: all 0.3s ease; }
+    .price-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+    .popular { border: 2px solid #3B82F6; }
+  </style>
 </head>
-<body class="p-12 text-center">
-<h1 class="text-4xl font-bold text-blue-600">✅ LANDING PAGE WORKS!</h1>
-<p class="text-xl mt-4">mrsmile-build/twitter-data-api is LIVE</p>
-<a href="https://rapidapi.com/mrsmile-build/api/twitter-data-api/pricing" 
-   class="bg-blue-500 text-white px-6 py-3 rounded-lg mt-6 inline-block">→ RapidAPI Pricing</a>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen py-12 px-4">
+  <div class="max-w-6xl mx-auto">
+    
+    <!-- Hero Section -->
+    <section class="text-center mb-20 animate">
+      <h1 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">
+        Twitter Data API
+      </h1>
+      <p class="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+        Get tweets, users, trends, engagement data & more via simple REST API
+      </p>
+      <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-2xl max-w-4xl mx-auto">
+        <p class="text-2xl font-semibold text-gray-900 mb-4">
+          <strong>Affordable Twitter Data API Plans Starting at $9.99/mo</strong>
+        </p>
+        <a href="https://rapidapi.com/YOUR_USERNAME/api/twitter-data-api/pricing" 
+           class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-xl transition-all duration-300 inline-block">
+          Start Free Trial → 
+        </a>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+      <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all animate">
+        <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 4.582 9 9z"></path></svg>
+        </div>
+        <h3 class="text-xl font-bold mb-4 text-gray-900">Get Tweets</h3>
+        <p class="text-gray-600">Search by keywords, hashtags, users. Real-time & historical data.</p>
+      </div>
+      <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all animate">
+        <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+        </div>
+        <h3 class="text-xl font-bold mb-4 text-gray-900">User Data</h3>
+        <p class="text-gray-600">Profiles, followers, following, bio, engagement stats.</p>
+      </div>
+      <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all animate">
+        <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+          <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+        </div>
+        <h3 class="text-xl font-bold mb-4 text-gray-900">Trends</h3>
+        <p class="text-gray-600">Real-time worldwide & location-specific trending topics.</p>
+      </div>
+      <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all animate">
+        <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+          <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+        </div>
+        <h3 class="text-xl font-bold mb-4 text-gray-900">Engagement</h3>
+        <p class="text-gray-600">Likes, retweets, replies, quotes, impressions data.</p>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="mb-20 animate">
+      <h2 class="text-4xl font-bold text-center mb-4 text-gray-900">Transparent & Scalable Pricing</h2>
+      <p class="text-xl text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+        Choose the perfect plan for your needs. No hidden fees.
+      </p>
+
+      <div class="pricing-grid grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <!-- MEGA (Free) -->
+        <div class="price-card bg-white rounded-2xl p-8 shadow-xl border">
+          <div class="price-header mb-8">
+            <div class="plan-name text-2xl font-bold text-gray-900 mb-2">MEGA (Free)</div>
+            <div class="price-amount text-4xl font-bold text-blue-600">$0<span class="price-period text-lg text-gray-500 ml-2">/mo</span></div>
+          </div>
+          <ul class="plan-features space-y-3 mb-8 text-gray-700">
+            <li>Limited monthly requests</li>
+            <li>Standard rate limits</li>
+            <li>Access to all endpoints</li>
+          </ul>
+          <a href="https://rapidapi.com/YOUR_USERNAME/api/twitter-data-api/pricing" 
+             class="plan-cta block w-full bg-blue-500 text-white text-center py-4 px-6 rounded-xl font-semibold hover:bg-blue-600 transition-all text-lg" target="_blank">
+            Get Started Free
+          </a>
+        </div>
+
+        <!-- BASIC -->
+        <div class="price-card bg-white rounded-2xl p-8 shadow-xl border">
+          <div class="price-header mb-8">
+            <div class="plan-name text-2xl font-bold text-gray-900 mb-2">BASIC</div>
+            <div class="price-amount text-4xl font-bold text-green-600">$9.99<span class="price-period text-lg text-gray-500 ml-2">/mo</span></div>
+          </div>
+          <ul class="plan-features space-y-3 mb-8 text-gray-700">
+            <li>Higher monthly request quota</li>
+            <li>Improved rate limits</li>
+            <li>Email support</li>
+          </ul>
+          <a href="https://rapidapi.com/YOUR_USERNAME/api/twitter-data-api/pricing" 
+             class="plan-cta block w-full bg-green-500 text-white text-center py-4 px-6 rounded-xl font-semibold hover:bg-green-600 transition-all text-lg" target="_blank">
+            Subscribe
+          </a>
+        </div>
+
+        <!-- PRO (Popular) -->
+        <div class="price-card popular bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 shadow-2xl border-4 border-blue-200 relative">
+          <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold">⭐ PRO</div>
+          <div class="price-header mb-8">
+            <div class="plan-name text-2xl font-bold text-gray-900 mb-2">PRO</div>
+            <div class="price-amount text-4xl font-bold text-blue-600">$29.99<span class="price-period text-lg text-gray-500 ml-2">/mo</span></div>
+          </div>
+          <ul class="plan-features space-y-3 mb-8 text-gray-700">
+            <li>Large request quota</li>
+            <li>Higher rate limits</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="https://rapidapi.com/YOUR_USERNAME/api/twitter-data-api/pricing" 
+             class="plan-cta block w-full bg-blue-600 text-white text-center py-4 px-6 rounded-xl font-semibold hover:bg-blue-700 transition-all text-lg" target="_blank">
+            Most Popular
+          </a>
+        </div>
+
+        <!-- ULTRA -->
+        <div class="price-card bg-white rounded-2xl p-8 shadow-xl border">
+          <div class="price-header mb-8">
+            <div class="plan-name text-2xl font-bold text-gray-900 mb-2">ULTRA</div>
+            <div class="price-amount text-4xl font-bold text-purple-600">$99.99<span class="price-period text-lg text-gray-500 ml-2">/mo</span></div>
+          </div>
+          <ul class="plan-features space-y-3 mb-8 text-gray-700">
+            <li>Maximum monthly quota</li>
+            <li>High rate limits</li>
+            <li>Premium support</li>
+          </ul>
+          <a href="https://rapidapi.com/YOUR_USERNAME/api/twitter-data-api/pricing" 
+             class="plan-cta block w-full bg-purple-500 text-white text-center py-4 px-6 rounded-xl font-semibold hover:bg-purple-600 transition-all text-lg" target="_blank">
+            Get Ultra
+          </a>
+        </div>
+      </div>
+
+      <!-- Trust Note -->
+      <p style="text-align:center; margin-top:40px; color:#666; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        All subscriptions and billing are securely handled via RapidAPI Marketplace. 
+        Usage limits and rate limits are automatically enforced.
+      </p>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="text-center mb-20 animate">
+      <h2 class="text-4xl font-bold text-gray-900 mb-6">Ready to Get Started?</h2>
+      <p class="text-xl text-gray-600 mb-8 max-w-lg mx-auto">
+        Test endpoints instantly. Scale effortlessly. No credit card required.
+      </p>
+      <a href="https://rapidapi.com/YOUR_USERNAME/api/twitter-data-api/pricing" 
+         class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-12 py-6 rounded-2xl text-xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-block" target="_blank">
+        → Launch Free Tier Now
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white/50 backdrop-blur-sm rounded-2xl p-12 text-center border border-gray-200 shadow-xl">
+      <p class="text-lg text-gray-700 mb-4">
+        Powered by <a href="https://rapidapi.com/YOUR_USERNAME/api/twitter-data-api" class="font-semibold text-blue-600 hover:underline" target="_blank">Twitter Data API</a> on RapidAPI
+      </p>
+      <p class="text-sm text-gray-500">
+        © 2026 Twitter Data API. All rights reserved. | 
+        <a href="https://rapidapi.com/YOUR_USERNAME/api/twitter-data-api/pricing" class="text-blue-600 hover:underline" target="_blank">Pricing</a> | 
+        <a href="https://rapidapi.com/YOUR_USERNAME/api/twitter-data-api/docs" class="text-blue-600 hover:underline" target="_blank">Docs</a>
+      </p>
+    </footer>
+  </div>
 </body>
-  </html>
+   </html>
